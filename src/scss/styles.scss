@@ -1,0 +1,60 @@
+@import "var.scss";
+@import "fonts.scss";
+
+body {
+    background-color: #0E0E0E;
+    width: 100%;
+    font-size: $size;
+    color: $color;
+    font-family: $fontfamily;
+}
+
+.chebox, label {
+    position: fixed;
+    right: 100px;
+    top: 20px;
+}
+
+.chebox {
+    margin: 8px 140px 0 0;
+}
+
+.grid {
+    width: 1000px;
+    height: 400px;
+    position: fixed;
+    top: 100px;
+    left: 100px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    justify-items: center;
+    align-items: center;
+}
+
+.grid__cell {
+    background-color: #E7C801;
+    width: 60px;
+    height: 60px;
+}
+
+.grid__cell:not(:hover) {
+    background-color: black;
+    transition: 2s;
+}
+
+#chebox:checked ~ .grid > .grid__cell {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    margin: -20px;
+    background-color: transparent;
+    border: solid 1px #ffffff;
+}
+
+#chebox:checked ~ .grid > .grid__cell:hover {
+    background-color: #E7C801;
+}
+
+#chebox:checked ~ .grid > .grid__cell:not(:hover) {
+    transition: 2s;
+}
