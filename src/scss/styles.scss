@@ -20,15 +20,7 @@ body {
 }
 
 .grid {
-    width: 1000px;
-    height: 400px;
-    position: fixed;
-    top: 100px;
-    left: 100px;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    justify-items: center;
-    align-items: center;
+    @include grid-container;
 }
 
 .grid__cell {
@@ -43,12 +35,7 @@ body {
 }
 
 #chebox:checked ~ .grid > .grid__cell {
-    border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    margin: -20px;
-    background-color: transparent;
-    border: solid 1px #ffffff;
+    @include radius;
 }
 
 #chebox:checked ~ .grid > .grid__cell:hover {
